@@ -5,6 +5,7 @@ A JSON database of 28802 entries with basic information about nearly every airpo
 
 ```json
 "KOSH": {
+    "icao": "KOSH",
     "iata": "OSH",
     "name": "Wittman Regional Airport",
     "city": "Oshkosh",
