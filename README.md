@@ -10,9 +10,9 @@ A JSON database of 28802 entries with basic information about nearly every airpo
     "name": "Wittman Regional Airport",
     "city": "Oshkosh",
     "country": "US",
-    "elevation": "808",
-    "lat": "43.9844017029",
-    "lon": "-88.5569992065",
+    "elevation": 808,
+    "lat": 43.9844017029,
+    "lon": -88.5569992065,
     "tz": "America\/Chicago"
 },
 ```
