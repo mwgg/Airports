@@ -1,7 +1,7 @@
 Airports
 ========
 
-A JSON database of 28802 entries with basic information about nearly every airport and landing strip in the world. ICAO codes used as primary value. Each entry contains IATA code, airport name, city, two letter ISO country code, elevation above sea level in feet, coordinates in decimal degrees and timezone.
+A JSON database of 28811 entries with basic information about nearly every airport and landing strip in the world. ICAO codes used as primary value. Each entry contains IATA code, airport name, city, two letter ISO country code, elevation above sea level in feet, coordinates in decimal degrees and timezone.
 
 ```json
 "KOSH": {
