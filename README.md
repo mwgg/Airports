@@ -9,7 +9,7 @@ A JSON database of 28811 entries with basic information about nearly every airpo
     "iata": "OSH",
     "name": "Wittman Regional Airport",
     "city": "Oshkosh",
-    "state": "Wisconsin"
+    "state": "Wisconsin",
     "country": "US",
     "elevation": 808,
     "lat": 43.9844017029,
