@@ -18,4 +18,4 @@ A JSON collection of 28k+ entries with basic information about nearly every airp
 },
 ```
 
-Time zones initially sourced from [TimeZoneDB](https://timezonedb.com).
+Time zones initially sourced from [TimeZoneDB](https://timezonedb.com) and updated using [TimeAPI](https://www.timeapi.io/).
