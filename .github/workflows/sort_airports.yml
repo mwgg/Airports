@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - master
-  pull_request:
-    branches:
-      - master
 
 jobs:
   sort-json:
@@ -22,7 +19,7 @@ jobs:
         python-version: '3.x'
 
     - name: Run JSON sorter
-      run: python sort.py airports.json airports.json icao
+      run: python ./.github/scripts/sort.py airports.json airports.json icao
 
     - name: Check if airports.json file changed
       id: file_changed
