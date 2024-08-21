@@ -9,7 +9,7 @@ on:
       - master
 
 jobs:
-  sort-json:
+  validate-json:
     runs-on: ubuntu-latest
 
     steps:
