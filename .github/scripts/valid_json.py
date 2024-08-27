@@ -3,30 +3,54 @@ import argparse
 import sys
 
 def check_json_validity(file_path):
+    errors = []
+
     try:
         with open(file_path, 'r') as file:
-            json.load(file)
-        return True, ""
+            data = json.load(file)
+
+        print(f"Found {len(data)} airport entries")
+
+        for key, value in data.items():
+            if "lat" in value:
+                if not isinstance(value["lat"], (float, int)):
+                    errors.append(f'Invalid type for "lat" in entry "{key}". Expected float or int, got {type(value["lat"]).__name__}.')
+                elif not -90 <= value["lat"] <= 90:
+                    errors.append(f'Invalid value for "lat" in entry "{key}". Expected between -90 and 90, got {value["lat"]}.')
+
+            if "lon" in value:
+                if not isinstance(value["lon"], (float, int)):
+                    errors.append(f'Invalid type for "lon" in entry "{key}". Expected float or int, got {type(value["lon"]).__name__}.')
+                elif not -180 <= value["lon"] <= 180:
+                    errors.append(f'Invalid value for "lon" in entry "{key}". Expected between -180 and 180, got {value["lon"]}.')
+
+            if "elevation" in value:
+                if not isinstance(value["elevation"], int):
+                    errors.append(f'Invalid type for "elevation" in entry "{key}". Expected int, got {type(value["elevation"]).__name__}.')
+
+        return errors
+
     except json.JSONDecodeError as e:
-        return False, f"Invalid JSON: {e}"
+        errors.append(f"Invalid JSON: {e}")
     except Exception as e:
-        return False, f"An unexpected error occurred: {e}"
+        errors.append(f"An unexpected error occurred: {e}")
+    
+    return errors
 
 def main():
-    parser = argparse.ArgumentParser(description="Check if a JSON file is valid.")
-    parser.add_argument("file", help="The path to the JSON file to check.")
-    
+    parser = argparse.ArgumentParser(description="Check if a JSON file is valid and meets specific criteria.")
+    parser.add_argument("file", help="The path to the JSON file to validate.")
     args = parser.parse_args()
-    file_path = args.file
+
+    errors = check_json_validity(args.file)
     
-    is_valid, message = check_json_validity(file_path)
-    
-    if is_valid:
-        print(f"The JSON file '{file_path}' is valid.")
-        sys.exit(0)
-    else:
-        print(f"The JSON file '{file_path}' is invalid. Error: {message}")
+    if errors:
+        print("Validation errors found:")
+        for error in errors:
+            print(error)
         sys.exit(1)
+    else:
+        print("The JSON file is valid.")
 
 if __name__ == "__main__":
     main()
