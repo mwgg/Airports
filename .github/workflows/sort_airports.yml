@@ -17,35 +17,41 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
 
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.x'
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
 
-    - name: Run JSON sorter
-      run: python ./.github/scripts/sort.py airports.json airports.json icao
+      - name: Run JSON sorter
+        run: python ./.github/scripts/sort.py airports.json airports.json icao
 
-    - name: Check if airports.json file changed
-      id: file_changed
-      run: |
-        if git diff --exit-code airports.json; then
-          echo "File did not change"
-          echo "changed=false" >> $GITHUB_ENV
-        else
-          echo "File was changed"
-          echo "changed=true" >> $GITHUB_ENV
-        fi
+      - name: Check if airports.json file changed
+        id: file_changed
+        run: |
+          if git diff --exit-code airports.json; then
+            echo "File did not change"
+            echo "changed=false" >> $GITHUB_ENV
+          else
+            echo "File was changed"
+            echo "changed=true" >> $GITHUB_ENV
+          fi
 
-    - name: Commit and push changes
-      if: env.changed == 'true'
-      run: |
-        git config --global user.name 'github-actions'
-        git config --global user.email 'github-actions@github.com'
-        git add airports.json
-        git commit -m 'Automatically sorted Airports JSON file'
-        git push
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit changes
+        if: env.changed == 'true'
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add airports.json
+          git commit -m 'Automatically sorted Airports JSON file'
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
