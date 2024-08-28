@@ -12,19 +12,33 @@ def check_json_validity(file_path):
         print(f"Found {len(data)} airport entries")
 
         for key, value in data.items():
-            if "lat" in value:
+            if "icao" not in value:
+                errors.append(f'Missing "icao" field in entry "{key}".')
+            else:
+                if value["icao"] != key:
+                    errors.append(f'Key "{key}" does not match its "icao" field value "{value["icao"]}".')
+                if len(value["icao"]) != 4:
+                    errors.append(f'Invalid "icao" length in entry "{key}". Expected 4, got {len(value["icao"])}.')
+
+            if "lat" not in value:
+                errors.append(f'Missing "lat" field in entry "{key}".')
+            else:
                 if not isinstance(value["lat"], (float, int)):
                     errors.append(f'Invalid type for "lat" in entry "{key}". Expected float or int, got {type(value["lat"]).__name__}.')
-                elif not -90 <= value["lat"] <= 90:
+                if not -90 <= value["lat"] <= 90:
                     errors.append(f'Invalid value for "lat" in entry "{key}". Expected between -90 and 90, got {value["lat"]}.')
 
-            if "lon" in value:
+            if "lon" not in value:
+                errors.append(f'Missing "lon" field in entry "{key}".')
+            else:
                 if not isinstance(value["lon"], (float, int)):
                     errors.append(f'Invalid type for "lon" in entry "{key}". Expected float or int, got {type(value["lon"]).__name__}.')
-                elif not -180 <= value["lon"] <= 180:
+                if not -180 <= value["lon"] <= 180:
                     errors.append(f'Invalid value for "lon" in entry "{key}". Expected between -180 and 180, got {value["lon"]}.')
 
-            if "elevation" in value:
+            if "elevation" not in value:
+                errors.append(f'Missing "elevation" field in entry "{key}".')
+            else:
                 if not isinstance(value["elevation"], int):
                     errors.append(f'Invalid type for "elevation" in entry "{key}". Expected int, got {type(value["elevation"]).__name__}.')
 
@@ -45,7 +59,7 @@ def main():
     errors = check_json_validity(args.file)
     
     if errors:
-        print("Validation errors found:")
+        print(f'{len(errors)} validation errors found:')
         for error in errors:
             print(error)
         sys.exit(1)
