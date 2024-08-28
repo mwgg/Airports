@@ -47,10 +47,12 @@ jobs:
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
+          git pull origin ${{ github.ref }}
           git add airports.json
           git commit -m 'Automatically sorted Airports JSON file'
 
       - name: Push changes
+        if: env.changed == 'true'
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
