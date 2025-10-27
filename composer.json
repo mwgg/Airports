@@ -1,0 +1,12 @@
+{
+    "name": "mwgg/Airports",
+    "description": "A JSON collection of ~29k entries with basic information about nearly every airport and landing strip in the world",
+    "require": {
+        "php" : ">=7.4"
+    }
+    "authors": [
+        {
+            "name": "mwgg"
+        }
+    ],
+}
