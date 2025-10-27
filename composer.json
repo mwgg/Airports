@@ -16,7 +16,7 @@
     ],
     "require": {
         "php" : ">=7.4"
-    }
+    },
     "homepage": "https://github.com/mwgg/Airports",
     "license": "MIT",
     "authors": [
@@ -28,5 +28,5 @@
     "support": {
         "issues": "https://github.com/mwgg/Airports/issues",
         "source": "https://github.com/mwgg/Airports"
-    },
+    }
 }
