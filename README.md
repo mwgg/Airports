@@ -22,4 +22,4 @@ Time zones initially sourced from [TimeZoneDB](https://timezonedb.com) and updat
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=mwgg/Airports&type=Date)](https://star-history.com/#mwgg/Airports&Date)
+[![Star History Chart](https://star-history.dera.page/svg?repos=mwgg/Airports&type=Date)](https://star-history.dera.page/#mwgg/Airports&Date)
