@@ -84095,6 +84095,18 @@
         "lon": -113.580001831,
         "tz": "America/Edmonton"
     },
+    "CYEP": {
+        "icao": "CYEP",
+        "iata": "",
+        "name": "Edmonton Parkland Executive Airport",
+        "city": "Edmonton",
+        "state": "Alberta",
+        "country": "CA",
+        "elevation": 2330,
+        "lat": 53.474167,
+        "lon": -113.824167,
+        "tz": "America/Edmonton"
+    },
     "CYEK": {
         "icao": "CYEK",
         "iata": "YEK",
