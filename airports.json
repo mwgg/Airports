@@ -330803,6 +330803,18 @@
         "lon": 116.7959976196,
         "tz": "Australia/Perth"
     },
+    "YBLE": {
+        "icao": "YBLE",
+        "iata": "ZBL",
+        "name": "Biloela Airport",
+        "city": "Biloela",
+        "state": "Queensland",
+        "country": "AU",
+        "elevation": 643,
+        "lat": -24.320816,
+        "lon": 150.509627,
+        "tz": "Australia/Brisbane"
+    },
     "YBLG": {
         "icao": "YBLG",
         "iata": "",
