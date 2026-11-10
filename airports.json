@@ -90443,6 +90443,18 @@
         "lon": 5.2071900368,
         "tz": "Africa/Lagos"
     },
+    "DNSU": {
+        "icao": "DNSU",
+        "iata": "QRW",
+        "name": "Warri Airport",
+        "city": "Warri",
+        "state": "Delta",
+        "country": "NG",
+        "elevation": 27,
+        "lat": 5.59821,
+        "lon": 5.8187,
+        "tz": "Africa/Lagos"
+    },
     "DNYO": {
         "icao": "DNYO",
         "iata": "YOL",
@@ -102274,6 +102286,18 @@
         "lat": 55.3022003174,
         "lon": 9.5225000381,
         "tz": "Europe/Copenhagen"
+    },
+    "EKK": {
+        "icao": "",
+        "iata": "EKK",
+        "name": "Ekiti Agro-Allied International Cargo Airport",
+        "city": "Ado-Ekiti",
+        "state": "Ekiti",
+        "country": "NG",
+        "elevation": 1250,
+        "lat": 7.638564,
+        "lon": 5.344168,
+        "tz": "Africa/Lagos"
     },
     "EKKA": {
         "icao": "EKKA",
