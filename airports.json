@@ -349295,6 +349295,18 @@
         "lon": 112.28099823,
         "tz": "Asia/Shanghai"
     },
+    "ZHSY": {
+        "icao": "ZHSY",
+        "iata": "WDS",
+        "name": "Shiyan Wudangshan Airport",
+        "city": "Shiyan",
+        "state": "Hubei",
+        "country": "CN",
+        "elevation": 1125,
+        "lat": 32.5933,
+        "lon": 110.906,
+        "tz": "Asia/Shanghai"
+    },
     "ZHXF": {
         "icao": "ZHXF",
         "iata": "XFN",
