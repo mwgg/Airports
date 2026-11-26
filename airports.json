@@ -240239,6 +240239,18 @@
         "lon": 129.330993652,
         "tz": "Asia/Tokyo"
     },
+    "RJDU": {
+        "icao": "RJDU",
+        "iata": "",
+        "name": "\u014cmura Air Base",
+        "city": "Omura",
+        "state": "Nagasaki",
+        "country": "JP",
+        "elevation": 19,
+        "lat": 32.928056,
+        "lon": 129.934167,
+        "tz": "Asia/Tokyo"
+    },
     "RJEB": {
         "icao": "RJEB",
         "iata": "MBE",
